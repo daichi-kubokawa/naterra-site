@@ -1,0 +1,22 @@
+{
+  "id": "p005",
+  "name": "リネンふきん",
+  "price": 1500,
+  "stock": 40,
+  "imgBase": "p005",
+  "category": "storage",
+  "limited": false,
+
+  "description": {
+    "title": "毎日の暮らしに寄り添うリネンふきん",
+    "body": "吸水性と速乾性に優れたリネン素材のふきん。キッチンや食卓で活躍し、使うほどに柔らかくなり手になじみます。"
+  },
+
+
+  "specs": [
+    { "label": "サイズ", "value": "約40cm × 40cm" },
+    { "label": "材質",   "value": "リネン100%" },
+    { "label": "カラー", "value": "生成り" },
+    { "label": "原産国", "value": "リトアニア" }
+  ]
+}

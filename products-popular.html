@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="人気商品 | Naterra オンラインショップ"/>
+  <title>人気商品 | Naterra</title>
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300&family=Roboto:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon/favicon-48x48.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/favicon-180x180.png"/>
+</head>
+<body>
+  <header>
+    <div class="header__nav">
+      <div class="header__left">
+        <div class="header__hamburger sp">
+          <button class="btn-trigger" id="btn03" data-nav-open aria-label="メニューを開閉" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <div class="header__logo">
+          <a href="./index.html" class="header__logoLink">
+            <img src="./assets/images/logo/logo-sp.svg" alt="Naterra" />
+          </a>
+        </div>
+        <div class="header__textink pc">
+          <a href="./products-all.html" class="">カテゴリ一覧</a>
+        </div>
+        <div class="header__textink pc">
+          <a href="./products-new.html" class="">新着商品</a>
+        </div>
+        <div class="header__textink pc">
+          <a href="./products-popular.html" class="">人気商品</a>
+        </div>
+      </div>
+      <div class="header__tools">
+        <div class="header__serch pc">
+          <a href="#" class="header__serchLink">
+            <img src="./assets/images/icon/search.svg" alt="検索" />
+          </a>
+        </div>
+        <div class="header__login">
+          <a href="#" class="header__LoginLink">
+            <img src="./assets/images/icon/login.svg" alt="ログイン" />
+          </a>
+        </div>
+        <div class="header__cart">
+          <a href="./cart.html" class="header__CartLink">
+            <img src="./assets/images/icon/cart.svg" alt="カート"/>
+            <span id="cartBadge" class="cartBadge" hidden></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navOverlay" data-nav-overlay hidden></div>
+  <aside class="navDrawer" role="dialog" aria-modal="true" aria-hidden="true" data-nav-drawer hidden>
+    <div class="navDrawer__panel">
+      <nav class="navDrawer__body" aria-label="メニュー">
+        <div class="menuSection">
+          <h3 class="menuSection__title">商品</h3>
+          <ul class="menuList" role="list">
+            <li><a class="menuItem" href="./products-all.html"><span>商品一覧</span></a></li>
+            <li><a class="menuItem" href="./products-new.html"><span>新着商品</span></a></li>
+            <li><a class="menuItem" href="./products-popular.html"><span>人気商品</span></a></li>
+            <li>
+              <button class="menuItem menuItem--toggle" aria-expanded="false" data-cat-toggle>
+                <span>カテゴリ一覧</span>
+                <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                  <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line>
+                  <line class="v" x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line>
+                </svg>
+              </button>
+              <ul class="submenu" hidden>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-fabric.html"><img src="./assets/images/categories/fabric/fabric-330.jpg" alt=""><span>布雑貨</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-kitchen.html"><img src="./assets/images/categories/kitchen/kitchen-330.jpg" alt=""><span>キッチン</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-interior.html"><img src="./assets/images/categories/interior/interior-330.jpg" alt=""><span>インテリア</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-relax.html"><img src="./assets/images/categories/relax/relax-330.jpg" alt=""><span>バス・リラックス</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-storage.html"><img src="./assets/images/categories/storage/storage-330.jpg" alt=""><span>収納・かご</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="menuSection">
+          <h3 class="menuSection__title">お店</h3>
+          <ul class="menuList" role="list">
+            <li><a class="menuItem" href="./about.html"><span>Naterraについて</span></a></li>
+            <li><a class="menuItem" href="./news.html"><span>ニュース</span></a></li>
+            <li><a class="menuItem" href="./contact.html"><span>お問い合わせ</span></a></li>
+            <li><a class="menuItem" href="./faq.html"><span>よくあるご質問</span></a></li>
+          </ul>
+        </div>
+        <div class="menuSNS">
+          <a href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"></a>
+          <a href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram"></a>
+        </div>
+      </nav>
+    </div>
+  </aside>
+
+  <main>
+    <div class="breadcrumb">
+      <ul class="breadcrumb__list">
+        <li><a href="./index.html">ホーム</a></li>
+        <li><span></span></li>
+        <li>人気商品</li>
+      </ul>
+    </div>
+
+    <section class="productsname" aria-labelledby="popular-title">
+      <div class="products__ttl"><h2 id="popular-title" class="section__title">人気商品</h2></div>
+
+      <div class="filterBar" aria-label="絞り込み・並び替え">
+        <button type="button" class="filterBtn filterBtn--category" id="btnOpenCategories"
+          aria-haspopup="dialog" aria-controls="sheetCategories" aria-expanded="false">
+          <span class="filterBtn__label">カテゴリを選ぶ</span>
+          <span class="filterBtn__plus" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="filterBtn filterBtn--sort" id="btnOpenSort"
+          aria-haspopup="menu" aria-controls="menuSort" aria-expanded="false">
+          <span class="filterBtn__label" id="currentSortLabel">新着順</span>
+          <span class="filterBtn__plus" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="sortMenu" id="menuSort" role="menu" aria-labelledby="btnOpenSort" hidden>
+        <button type="button" role="menuitemradio" class="sortMenu__item" data-sort="new" aria-checked="true">
+          <span class="sortMenu__check" aria-hidden="true"></span> 新着順
+        </button>
+        <button type="button" role="menuitemradio" class="sortMenu__item" data-sort="priceAsc" aria-checked="false">
+          <span class="sortMenu__check" aria-hidden="true"></span> 価格が安い順
+        </button>
+        <button type="button" role="menuitemradio" class="sortMenu__item" data-sort="priceDesc" aria-checked="false">
+          <span class="sortMenu__check" aria-hidden="true"></span> 価格が高い順
+        </button>
+        <button type="button" role="menuitemradio" class="sortMenu__item" data-sort="popular" aria-checked="false">
+          <span class="sortMenu__check" aria-hidden="true"></span> 人気順
+        </button>
+      </div>
+
+      <div class="filterOverlay" id="overlayCategories" hidden></div>
+      <aside class="categorySheet" id="sheetCategories" role="dialog" aria-modal="true" aria-labelledby="categorySheetTitle" hidden>
+        <div class="categorySheet__bar">
+          <h3 class="categorySheet__title" id="categorySheetTitle">カテゴリ</h3>
+          <button type="button" class="categorySheet__close" id="btnCloseCategories" aria-label="閉じる">
+            <span></span><span></span>
+          </button>
+        </div>
+        <nav class="categorySheet__body" aria-label="カテゴリ一覧">
+          <ul class="categorySheet__list" role="list">
+            <li><a class="categorySheet__item" href="./products-all.html">商品一覧</a></li>
+            <li><a class="categorySheet__item" href="./products-new.html">新着商品</a></li>
+            <li><a class="categorySheet__item" href="./products-popular.html">人気商品</a></li>
+            <li><a class="categorySheet__item categorySheet__item--thumb" href="./products-fabric.html"><img src="./assets/images/categories/fabric/fabric-330.jpg" alt=""><span>布雑貨</span></a></li>
+            <li><a class="categorySheet__item categorySheet__item--thumb" href="./products-kitchen.html"><img src="./assets/images/categories/kitchen/kitchen-330.jpg" alt=""><span>キッチン</span></a></li>
+            <li><a class="categorySheet__item categorySheet__item--thumb" href="./products-interior.html"><img src="./assets/images/categories/interior/interior-330.jpg" alt=""><span>インテリア</span></a></li>
+            <li><a class="categorySheet__item categorySheet__item--thumb" href="./products-relax.html"><img src="./assets/images/categories/relax/relax-330.jpg" alt=""><span>バス・リラックス</span></a></li>
+            <li><a class="categorySheet__item categorySheet__item--thumb" href="./products-storage.html"><img src="./assets/images/categories/storage/storage-330.jpg" alt=""><span>収納・かご</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <ul id="productGridPopular" class="productGrid" role="list"></ul>
+    </section>
+
+    <template id="productCardTpl">
+      <li class="productCard">
+        <a href="./index.html" class="productCard__thumbWrap productCard__link">
+          <img class="productCard__thumb" alt="">
+          <span class="badge badge--limited" hidden>数量<br>限定</span>
+        </a>
+        <div class="productCard__rowA">
+          <p class="productCard__name"></p>
+          <button
+            class="favBtn"
+            type="button"
+            aria-label="お気に入りに追加"
+            aria-pressed="false"
+            data-src-off="./assets/images/icon/favorite-off.svg"
+            data-src-on="./assets/images/icon/favorite-on.svg">
+            <img class="favIcon" src="./assets/images/icon/favorite-off.svg" alt="" aria-hidden="true" width="32" height="32">
+          </button>
+        </div>
+        <div class="productCard__rowB">
+          <p class="productCard__stock"></p>
+          <p class="productCard__price"></p>
+        </div>
+        <div class="productCard__cta">
+          <button type="button" class="btnCart" data-product-id="">カートに入れる</button>
+        </div>
+      </li>
+    </template>
+
+    <div class="products__pager">
+      <p class="products__count" id="productsCount">0件中 0件〜0件 表示</p>
+      <div class="pagination" aria-label="ページ送り">
+        <ul id="paginationList"></ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="cartOverlay" id="cartOverlay" hidden></div>
+  <aside class="cartSheet" id="cartSheet" role="dialog" aria-modal="true" aria-labelledby="cartSheetTitle" hidden>
+    <div class="cartSheet__bar">
+      <button type="button" class="cartSheet__close" id="cartCloseBtn" aria-label="閉じる">
+        <span></span><span></span>
+      </button>
+      <h3 id="cartSheetTitle">カートに入れる</h3>
+    </div>
+    <div class="cartSheet__body">
+      <h4 id="cartProductName" class="cartSheet__name"></h4>
+      <div class="cartSheet__imgWrap">
+        <img id="cartProductImg" alt="">
+      </div>
+      <div class="cartQty">
+        <button type="button" class="cartQty__btn" id="qtyMinus" aria-label="数量を1減らす"><img class="reductionIcon" src="./assets/images/icon/reduction.svg" alt="" aria-hidden="true"></button>
+        <output id="qtyValue" class="cartQty__value" aria-live="polite">1</output>
+        <button type="button" class="cartQty__btn" id="qtyPlus" aria-label="数量を1増やす"><img class="reductionIcon" src="./assets/images/icon/add.svg" alt="" aria-hidden="true"></button>
+      </div>
+      <div class="cartPrimaryBtn__Container">
+        <button type="button" class="cartAddBtn" id="addToCartBtn">カートに入れる</button>
+      </div>
+    </div>
+  </aside>
+  <aside class="cartConfirm" id="cartConfirm" role="dialog" aria-modal="true" aria-labelledby="cartConfirmTitle" hidden>
+    <div class="cartSheet__bar">
+      <button type="button" class="cartSheet__close" id="confirmCloseBtn" aria-label="閉じる">
+        <span></span><span></span>
+      </button>
+      <h3 id="cartConfirmTitle">カートに追加しました</h3>
+    </div>
+    <div class="cartConfirm__body">
+      <p class="cartConfirm__row">カートの合計 <strong id="cartTotalCount">0</strong> 点</p>
+      <p class="cartConfirm__row">税込 <strong id="cartTotalPrice">¥0</strong></p>
+    </div>
+    <div class="cartPrimaryBtn__Container">
+      <a href="./cart.html" class="cartPrimaryBtn cartPrimaryBtn--full">カートを確認する</a>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer__prev">
+      <div class="footer__inner">
+        <div class="footer__logo"><img src="./assets/images/logo/logo-sp.svg" alt="Naterra"/></div>
+        <nav class="footer__nav">
+          <ul class="navleft">
+            <li><a href="./about.html">Naterraについて</a></li>
+            <li><a href="./news.html">ニュース</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./faq.html">よくあるご質問</a></li>
+          </ul>
+          <ul class="navright">
+            <li><a href="./index.html">利用規約</a></li>
+            <li><a href="./index.html">特定商取引法に基づく表記</a></li>
+            <li><a href="./index.html">プライバシーポリシー</a></li>
+          </ul>
+        </nav>
+        <div class="footer__sns">
+          <a href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"/></a>
+          <a href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram"/></a>
+        </div>
+        <div class="copy__container">
+          <p class="footer__copy">&copy;2025 Naterra</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/js/utils.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/filter-sort-ui.js" defer></script>
+  <script src="./assets/js/products-list.js" defer></script>
+  <script src="./assets/js/cart-modal.js" defer></script>
+</body>
+</html>

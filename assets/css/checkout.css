@@ -1,0 +1,543 @@
+input::placeholder,
+textarea::placeholder {
+  color: #a0a0a0;
+  font-family: inherit;
+  font-weight: 400;
+}
+.checkout {
+  width: 100%;
+  margin: 0 auto;
+}
+.checkout .products__ttl {
+  margin: 60px 20px 0 20px;
+}
+.checkout__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 20px;
+}
+.co__subttl {
+  font-size: 2rem;
+  font-weight: var(--fontMedium);
+  margin-top: 60px;
+}
+.coFieldset {
+  display: grid;
+  border: none;
+  border-radius: 8px;
+  background: var(--bg1);
+  margin-top: 30px;
+}
+.coLegend {
+  font-size: 1.6rem;
+  font-weight: var(--fontMedium);
+  margin-bottom: 8px;
+}
+.coCtl {
+  display: grid;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.coCtl > span {
+  font-size: 1.2rem;
+  color: var(--textColor);
+}
+.coCtl input,
+.coCtl select,
+.coFieldset textarea {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid var(--textGlayColor);
+  border-radius: 5px;
+  font-size: 1.4rem;
+  background: #fff;
+  color: var(--textColor);
+}
+.coCtl select {
+  font-size: 1.4rem;
+  height: 44px;
+  color: #A0A0A0;
+}
+.coFieldset textarea {
+  height: auto;
+}
+.coGrid2 {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 40px;
+}
+.coRadio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.coChk {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+.coPayBox,
+.coShipBox {
+  border: 1px solid var(--textGlayColor);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.coPayRow,
+.coShipRow {
+  border: none;
+  border-bottom: 1px solid var(--textGlayColor);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  background: #fff;
+}
+.coPayRow:first-child,
+.coShipRow:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.coPayRow:last-child,
+.coShipRow:last-child {
+  border-radius: 0 0 8px 8px;
+  border-bottom: none;
+}
+.coPayRow:not(:first-child):not(:last-child),
+.coShipRow:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.coPayRow input[type="radio"],
+.coShipRow input[type="radio"] {
+  transform: translateY(1px);
+}
+.coPayRow span,
+.coShipRow span {
+  font-size: 1.4rem;
+  color: var(--textColor);
+}
+.coCard {
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--textGlayColor);
+}
+.coCard[hidden] {
+  display: none;
+}
+.coGridCard {
+  display: grid;
+  grid-template-columns: 80px 80px;
+  gap: 20px;
+}
+.coGridCard input,
+.coGridCard select {
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+}
+.coGridCard .is-wide {
+  grid-column: span 2;
+}
+.coSaveCard {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.coSetRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.coSetBtn {
+  min-width: 100px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--mainColor);
+  color: #fff;
+  font-size: 1.4rem;
+}
+.coSetBtn:active {
+  transform: translateY(1px);
+}
+.coSum__title {
+  font-size: 2rem;
+  margin: 60px 20px 0;
+  font-weight: 500;
+}
+.coCautionlabel{
+  font-size: 1rem;
+  color: var(--accentColor);
+  margin: 0 20px 15px;
+}
+.coItems {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.coItem {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f5f5f5;
+}
+.coItem .coCtl {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+.coItem .coCtl > span,
+.coItem .coCtl > select,
+.coItem .coCtl > span:last-child {
+  line-height: 1.2;
+}
+.coItem__subtotal{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: baseline;
+  justify-content: end;
+  gap: 5px;
+}
+.coItem__tax{
+  font-size: 1rem;
+}
+.coItem .coCtl select[name="itemCount"] {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  vertical-align: bottom;
+  color: var(--textColor);
+}
+.coCard .coCtl select[name="cardYear"],
+.coCard .coCtl select[name="cardMonth"] {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  vertical-align: bottom;
+  color: #a0a0a0;
+}
+.coItem__thumb img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+.coItem__name {
+  font-size: 1.4rem;
+}
+.coItem__unit {
+  font-size: 1.2rem;
+}
+.coItem__qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.coQtyBtn {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: #e9e9e9;
+}
+.coQtyVal {
+  font-size: 1.2rem;
+}
+.coItem__amt {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.couponBox{
+  display: flex;
+  justify-content: space-between;
+}
+.coSummary{
+  background-color: #f5f5f5;
+}
+.coCoupon {
+  display: block;
+  padding: 30px 20px;
+}
+.coCoupon__input {
+  width: 200px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--textGlayColor);
+  border-radius: 5px;
+}
+.coCoupon__btn {
+  height: 40px;
+  width: 100px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid var(--mainColor);
+  color: white;
+  background: var(--mainColor);
+}
+.coTotal {
+  padding: 20px 20px;
+}
+.coTotal .row {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: 1fr auto;
+  margin-top: 5px;
+}
+.coTotal .row.total {
+  border-top: 1px solid var(--textGlayColor);
+  margin-top: 5px;
+  padding-top: 10px;
+}
+.coTotal dt,dd {
+  font-size: 1.4rem;
+}
+.coOpts {
+  margin: 10px 0;
+}
+.coOrderBtn {
+  background-color: var(--accentColor);
+}
+.coOrderBtn::before{
+  border-color: var(--accentColor);
+}
+.coBackBox{
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+.coBack {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  text-decoration: none;
+  padding: 0 auto;
+}
+.coBack span {
+  display: block;
+  box-sizing: border-box;
+  width: .65em;
+  height: .65em;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(225deg) translateY(-0.6em);
+  transform-origin: center;
+  line-height: 1;
+}
+.svgRadio input[type="radio"] {
+  display: none;
+}
+.svgRadio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.svgRadio__icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.svgRadio__dot {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.svgRadio input[type="radio"]:checked + .svgRadio__icon .svgRadio__dot {
+  opacity: 1;
+}
+.coPayLabel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 16px 0;
+}
+.coPayRow {
+  cursor: pointer;
+}
+.coPayDesc {
+  border: none;
+  border-bottom: 1px solid var(--textGlayColor);
+  padding: 16px;
+  background: #fff;
+  font-size: 1.4rem;
+  color: var(--textColor);
+  margin: 0;
+}
+.coPayDesc:last-child {
+  border-bottom: none;
+}
+.coFieldset select{
+  width: 100%;
+  height: 40px;
+  appearance: none; 
+  border: 1px solid var(--textGlayColor);
+  font-size: 1.4rem;
+  color: var(--textColor);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 10px;
+  background-color: white;
+}
+select[name="itemCount"] {
+  width: 50px;
+  height: 30px;
+  appearance: none; 
+  border: 1px solid var(--textGlayColor);
+  font-size: 1.4rem;
+  color: var(--textGlayColor);
+  cursor: pointer;
+  position: relative;
+}
+.coFieldset select{
+  background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23444444' stroke-width='1' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><polyline points='6,8 10,12 14,8'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  background-size: 20px 20px;  
+}
+select[name="itemCount"] {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23444444' stroke-width='1' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><polyline points='6,8 10,12 14,8'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  background-size: 20px 20px;
+}
+.coDesc{
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
+.coTotal .row.total dd{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.coCoupon span{
+  font-size: 1.2rem;
+}
+.footer__checkout{
+  border-top: 1px solid var(--lightGray);
+  padding: 20px 20px;
+}
+.footerNav__checkout ul{
+  list-style: none;
+  padding: 5px 0 10px;
+}
+.footerNav__checkout li{
+  margin-top: 5px;
+}
+.footerNav__checkout a{
+  list-style: none;
+  font-size: 1.3rem;
+  color: var(--textColor);
+  text-decoration: none;
+}
+.coPayDesc:last-child {
+  border-bottom: none;
+}
+.coPayRow:last-child {
+  border-bottom: none;
+}
+.address__btn{
+  height: 40px;
+  width: 100px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid var(--mainColor);
+  color: white;
+  background: var(--mainColor);
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #777;
+  border-radius: 2px;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+  vertical-align: middle;
+}
+input[type="checkbox"]:checked {
+  background: #444;
+  border-color: #444;
+}
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 13px;
+  height: 7px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+}
+.stepper__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stepper__dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 8px;
+}
+.stepper__dot.is-done { background: #8BC34A; }
+.stepper__dot.is-current { background: #E57373; }
+.stepper__label {
+  font-size: 1.2rem;
+  color: #444;
+  text-align: center;
+}
+.stepper__lines {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  width: 80%;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.stepper__line {
+  flex: 1;
+  height: 2px;
+  background: #ccc;
+  margin: 0 10px;
+  align-self: center;
+}
+.stepper {
+  position: relative;
+}
+.coCtl input:focus,
+.coCtl input:active,
+.coCtl select:focus,
+.coCtl select:active,
+.coFieldset textarea:focus,
+.coFieldset textarea:active
+.coCoupon__input input:focus,
+.coCoupon__input input:active {
+  border-color: var(--mainColor) !important;
+  outline: none;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  border-color: var(--mainColor) !important;
+}

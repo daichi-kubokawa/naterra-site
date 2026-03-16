@@ -1,0 +1,38 @@
+body {
+  background: #fff;
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  color: #444;
+  margin: 0 auto;
+}
+
+.thanks__main {
+  text-align: center;
+  margin: 40px 0 0 0;
+  padding: 0 20px;
+}
+
+.thanks__main h1 {
+  color: #E57373;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.thanks__main img {
+  width: 238px;
+  height: 238px;
+  max-width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thanks__desc {
+  color: #444;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.thanksbtn{
+  margin: 30px;
+}

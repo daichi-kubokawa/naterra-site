@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="ご注文手続き | Naterra" />
+  <title>ご注文手続き | Naterra</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/cart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300&family=Roboto:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/checkout.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon/favicon-48x48.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/favicon-180x180.png"/>
+</head>
+<body class="no-sticky">
+  <header>
+    <div class="header__nav">
+      <div class="header__left">
+        <div class="header__logo">
+          <a href="./index.html" class="header__logoLink">
+            <img src="./assets/images/logo/logo-sp.svg" alt="Naterra"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navOverlay" data-nav-overlay hidden></div>
+  <aside class="navDrawer" role="dialog" aria-modal="true" aria-hidden="true" data-nav-drawer hidden>
+    <div class="navDrawer__panel">
+      <nav class="navDrawer__body" aria-label="メニュー">
+        <div class="menuSection">
+          <h3 class="menuSection__title">商品</h3>
+          <ul class="menuList" role="list">
+            <li><a class="menuItem" href="./products-all.html"><span>商品一覧</span></a></li>
+            <li><a class="menuItem" href="./products-new.html"><span>新着商品</span></a></li>
+            <li><a class="menuItem" href="./products-popular.html"><span>人気商品</span></a></li>
+            <li>
+              <button class="menuItem menuItem--toggle" aria-expanded="false" data-cat-toggle>
+                <span>カテゴリ一覧</span>
+                <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                  <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line>
+                  <line class="v" x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line>
+                </svg>
+              </button>
+              <ul class="submenu" hidden>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-fabric.html"><img src="./assets/images/categories/fabric/fabric-330.jpg" alt=""/><span>布雑貨</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-kitchen.html"><img src="./assets/images/categories/kitchen/kitchen-330.jpg" alt=""/><span>キッチン</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-interior.html"><img src="./assets/images/categories/interior/interior-330.jpg" alt=""/><span>インテリア</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-relax.html"><img src="./assets/images/categories/relax/relax-330.jpg" alt=""/><span>バス・リラックス</span></a></li>
+                <li><a class="submenuItem submenuItem--thumb" href="./products-storage.html"><img src="./assets/images/categories/storage/storage-330.jpg" alt=""/><span>収納・かご</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menuSection">
+          <h3 class="menuSection__title">お店</h3>
+          <ul class="menuList" role="list">
+            <li><a class="menuItem" href="#"><span>Naterraについて</span></a></li>
+            <li><a class="menuItem" href="#"><span>ニュース</span></a></li>
+            <li><a class="menuItem" href="#"><span>お問い合わせ</span></a></li>
+            <li><a class="menuItem" href="#"><span>よくあるご質問</span></a></li>
+          </ul>
+        </div>
+
+        <div class="menuSNS">
+          <a href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"/></a>
+          <a href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram"/></a>
+        </div>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="cartOverlay" id="cartOverlay" hidden></div>
+  <aside class="cartSheet" id="cartSheet" role="dialog" aria-modal="true" aria-labelledby="cartSheetTitle" hidden>
+    <div class="cartSheet__bar">
+      <button type="button" class="cartSheet__close" id="cartCloseBtn" aria-label="閉じる">
+        <span></span><span></span>
+      </button>
+      <h3 id="cartSheetTitle">カートに入れる</h3>
+    </div>
+    <div class="cartSheet__body">
+      <h4 id="cartProductName" class="cartSheet__name"></h4>
+      <div class="cartSheet__imgWrap"><img id="cartProductImg" alt=""/></div>
+      <div class="cartQty">
+        <button type="button" class="cartQty__btn" id="qtyMinus" aria-label="数量を1減らす">
+          <img class="reductionIcon" src="./assets/images/icon/reduction.svg" alt="" aria-hidden="true">
+        </button>
+        <output id="qtyValue" class="cartQty__value" aria-live="polite">1</output>
+        <button type="button" class="cartQty__btn" id="qtyPlus" aria-label="数量を1増やす">
+          <img class="reductionIcon" src="./assets/images/icon/add.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+      <div class="cartPrimaryBtn__Container" style="margin-top:16px;">
+        <button type="button" id="addToCartBtn" class="cartPrimaryBtn">カートに入れる</button>
+      </div>
+    </div>
+  </aside>
+  <aside class="cartConfirm" id="cartConfirm" role="dialog" aria-modal="true" aria-labelledby="cartConfirmTitle" hidden>
+    <div class="cartSheet__bar">
+      <button type="button" class="cartSheet__close" id="confirmCloseBtn" aria-label="閉じる">
+        <span></span><span></span>
+      </button>
+      <h3 id="cartConfirmTitle">カートに追加しました</h3>
+    </div>
+    <div class="cartConfirm__body">
+      <p class="cartConfirm__row">カートの合計 <strong id="cartTotalCount">0</strong> 点</p>
+      <p class="cartConfirm__row">税込 <strong id="cartTotalPrice">¥0</strong></p>
+    </div>
+    <div class="cartPrimaryBtn__Container">
+      <a href="./cart.html" class="cartPrimaryBtn cartPrimaryBtn--full">カートを確認する</a>
+    </div>
+  </aside>
+
+  <main>
+    <div aria-label="購入フロー">
+      <div class="stepper__grid">
+        <figure><img src="./assets/images/other/steper02.jpg" alt="stepper"></figure>
+      </div>
+    </div>
+    <section class="checkout" aria-labelledby="co-title">
+      <div class="products__ttl">
+        <h2 id="co-title" class="section__title">ご注文手続き</h2>
+      </div>
+      <div class="checkout__grid">
+        <form id="checkoutForm" novalidate>
+          <h3 class="co__subttl">お客様情報</h3>
+          <fieldset class="coFieldset">
+            <div class="coGrid2">
+              <label class="coCtl">
+                <span>姓（漢字）</span>
+                <input required name="lastName" autocomplete="family-name" placeholder="山田"/>
+              </label>
+              <label class="coCtl">
+                <span>名（漢字）</span>
+                <input required name="firstName" autocomplete="given-name" placeholder="太郎"/>
+              </label>
+            </div>
+            <div class="coGrid2">
+              <label class="coCtl">
+                <span>姓（カナ）</span>
+                <input required name="lastKana" placeholder="ヤマダ"/>
+              </label>
+              <label class="coCtl">
+                <span>名（カナ）</span>
+                <input required name="firstKana" placeholder="タロウ"/>
+              </label>
+            </div>
+            <div class="coGrid2">
+              <label class="coCtl">
+                <span>郵便番号</span>
+                <input required name="zip" inputmode="numeric" pattern="\\d{3}-?\\d{4}" placeholder="123-4567" />
+              </label>
+              <label class="coCtl">
+                <span>　</span>
+                <button id="addressBtn" type="button" class="address__btn">住所自動入力</button>
+              </label>
+                          </div>
+            <div class="coCtl">
+              <span>都道府県</span>
+              <select name="pref" required>
+                <option value="">都道府県を選択してください</option>
+                <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option>
+                <option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option>
+                <option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option>
+                <option>東京都</option><option>神奈川県</option>
+                <option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option>
+                <option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option>愛知県</option>
+                <option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option>
+                <option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option><option>岡山県</option>
+                <option>広島県</option><option>山口県</option><option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option>
+                <option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+              </select>
+            </div>
+            <div class="coCtl"><span>市区町村</span><input required name="city" placeholder="狛江市"/></div>
+            <div class="coCtl"><span>番地</span><input required name="addr1" placeholder="こまえ野町1-2-3"/></div>
+            <div class="coCtl"><span>建物名・部屋番号</span><input name="addr2" placeholder="〇〇マンション201号室（任意）"/></div>
+            <div class="coCtl">
+              <span>電話番号</span>
+              <input required name="tel" inputmode="tel" pattern="0\\d{9,10}" placeholder="09012345678" />
+            </div>
+            <div class="coCtl">
+              <span>メールアドレス</span>
+              <input required type="email" name="email" autocomplete="email" placeholder="example@example.com" />
+            </div>
+          </fieldset>
+          <h3 class="co__subttl">配送方法</h3>
+          <fieldset class="coFieldset">
+            <div class="coShipBox">
+              <div class="coShipRow">
+                <label class="svgRadio">
+                  <input type="radio" name="shipMethod" value="home" checked />
+                  <span class="svgRadio__icon" aria-hidden="true">
+                    <svg width="20" height="20">
+                      <circle cx="10" cy="10" r="9" fill="#fff" stroke="#444444" stroke-width="1"/>
+                      <circle cx="10" cy="10" r="5" fill="#444444" class="svgRadio__dot"/>
+                    </svg>
+                  </span>
+                  <span>指定の住所にお届け</span>
+                </label>
+              </div>
+              <div class="coShipRow">
+                <label class="svgRadio">
+                  <input type="radio" name="shipMethod" value="pickup" />
+                  <span class="svgRadio__icon" aria-hidden="true">
+                    <svg width="20" height="20">
+                      <circle cx="10" cy="10" r="9" fill="#fff" stroke="#444444" stroke-width="1"/>
+                      <circle cx="10" cy="10" r="5" fill="#444444" class="svgRadio__dot"/>
+                    </svg>
+                  </span>
+                  <span>店舗で受け取り（配送無料）</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <h3 class="co__subttl">お支払い方法</h3>
+          <fieldset class="coFieldset">
+          <div class="coPayBox">
+            <div class="coPayRow">
+              <label class="svgRadio coPayLabel">
+                <input type="radio" name="pay" value="card" checked />
+                <span class="svgRadio__icon" aria-hidden="true">
+                  <svg width="20" height="20">
+                    <circle cx="10" cy="10" r="9" fill="#fff" stroke="#444444" stroke-width="1"/>
+                    <circle cx="10" cy="10" r="5" fill="#444444" class="svgRadio__dot"/>
+                  </svg>
+                </span>
+                <span>クレジットカード</span>
+              </label>
+            </div>
+            <div class="coCard" id="cardPanel" hidden>
+              <label class="coCtl"><span>カード番号</span><input placeholder="1111 2222 3333 4444" inputmode="numeric" maxlength="19" /></label>
+              <div class="coGridCard">
+                <label class="coCtl"><span>月</span>
+                  <select required name="cardMonth">
+                    <option value="">MM</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </label>
+                <label class="coCtl"><span>年</span>
+                  <select required name="cardYear">
+                    <option value="">YY</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                  </select>
+                </label>
+              </div>
+              <label class="coCtl"><span>名義</span><input placeholder="TARO YAMADA" /></label>
+              <label class="coCtl"><span>セキュリティコード</span><input placeholder="123" inputmode="numeric" maxlength="4" /></label>
+              <label class="coChk"><input type="checkbox" /> クレジットカードを保存する</label>
+              <div class="coSetRow">
+                <button type="button" class="coSetBtn">設定する</button>
+              </div>
+            </div>
+            <div class="coPayRow">
+              <label class="svgRadio coPayLabel">
+                <input type="radio" name="pay" value="paypay" />
+                <span class="svgRadio__icon" aria-hidden="true">
+                  <svg width="20" height="20">
+                    <circle cx="10" cy="10" r="9" fill="#fff" stroke="#444444" stroke-width="1"/>
+                    <circle cx="10" cy="10" r="5" fill="#444444" class="svgRadio__dot"/>
+                  </svg>
+                </span>
+                <span>PayPay（オンライン決済）</span>
+              </label>
+            </div>
+            <div class="coPayDesc" id="paypayDesc" style="display:none;">
+              PayPayアプリまたはWeb上で、かんたんにお支払い頂けます。<br>
+              ご注文確定後、自動的にPayPayの画面に移動します。
+            </div>
+            <div class="coPayRow">
+              <label class="svgRadio coPayLabel">
+                <input type="radio" name="pay" value="bank" />
+                <span class="svgRadio__icon" aria-hidden="true">
+                  <svg width="20" height="20">
+                    <circle cx="10" cy="10" r="9" fill="#fff" stroke="#444444" stroke-width="1"/>
+                    <circle cx="10" cy="10" r="5" fill="#444444" class="svgRadio__dot"/>
+                  </svg>
+                </span>
+                <span>代金引換</span>
+              </label>
+            </div>
+              <div class="coPayDesc" id="bankDesc" style="display:none;">
+                商品お届け時に、配達員に代金をお支払いください。<br>
+                現金のみのお取り扱いとなります。
+              </div>
+          </div>
+          </fieldset>
+          <h3 class="co__subttl">配送時間</h3>
+          <fieldset class="coFieldset">
+            <select id="timeSlot">
+              <option value="">指定なし</option>
+              <option>午前中</option><option>14-16時</option><option>16-18時</option><option>18-20時</option><option>19-21時</option>
+            </select>
+          </fieldset>
+          <h3 class="co__subttl">備考欄</h3>
+          <fieldset class="coFieldset">
+              <label class="coCtl">
+                <input rows="3" placeholder="ご自由にご記入ください"></input>
+              </label>
+          </fieldset>
+        </form>
+      </div>
+              <h3 id="sum-title" class="coSum__title">ご注文内容</h3>
+      <p class="coCautionlabel">※ご注文内容をよくご確認ください。</p>
+      <aside class="coSummary" aria-labelledby="sum-title">
+        <ul id="coItems" class="coItems" role="list"></ul>
+
+        <div class="coCoupon">
+          <span>クーポンコードを入力</span>
+          <div class="couponBox">
+            <input id="couponInput" class="coCoupon__input" placeholder="NATERRA10" />
+            <button id="couponApply" type="button" class="coCoupon__btn">適用</button>
+          </div>
+        </div>
+
+        <dl class="coTotal">
+          <div class="row"><dt>小計</dt><dd id="sum-subtotal">¥0</dd></div>
+          <div class="row"><dt>ギフトサービス</dt><dd id="sum-gift">¥0</dd></div>
+          <div class="row"><dt>配送料</dt><dd id="sum-ship">¥0</dd></div>
+          <div class="row"><dt>クーポン割引</dt><dd id="sum-discount">- ¥0</dd></div>
+          <div class="row total"><dt>合計（税込）</dt><dd id="sum-total">¥0</dd></div>
+        </dl>
+        <div class="coDesc">
+          <p>店舗受け取りの場合、送料はかかりません</p>
+          <p>通常、ご注文から2〜3営業日以内に発送いたします</p>
+        </div>
+      </aside>
+      <div class="btnContainer">
+        <a href="./thanks.html" id="orderBtn" class="btn coOrderBtn" >ご注文を確定する</a>
+      </div>
+      <div class="coBackBox">
+        <a class="coBack" href="./cart.html"><span></span><p class="textLink" >カートに戻る</p></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer__checkout">
+    <nav class="footerNav__checkout">
+      <ul class="navright">
+        <li><a href="#">利用規約</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="./assets/js/utils.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/checkout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+.cartRow {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  border-top: 1px solid var(--lightGray);
+}
+.cartRow__thumb img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-top: 5px;
+}
+.cartRow__name {
+  font-size: 1.4rem;
+  margin-top: 5px;
+}
+.cartRow__unit {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+.cartControls {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.cartQty__box {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+.cartControls .cartQty__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: #d8d8d8;
+  font-size: 1.8rem;
+}
+.cartControls .cartQty__btn.is-disabled,
+.cartControls .cartQty__btn[disabled] {
+  opacity: .4;
+  cursor: default;
+  background: #f5f5f5;
+  color: #9aa0a6;
+  border-color: #e0e0e0;
+}
+.cartControls .cartQty__value {
+  min-width: 2ch;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.cartRow__remove {
+  background: none;
+  border: none;
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.cartControls .cartRow__remove {
+  margin-left: auto;
+}
+.cartRow__right {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 5px;
+  justify-items: end;
+}
+.cartRow__label {
+  font-size: 1rem;
+  margin: 0;
+}
+.cartRow__amount {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+}
+.cart__remain {
+  color: var(--accentColor);
+  margin-top: 5px;
+}
+.cart__remain.is-free {
+  color: var(--mainColor);
+}
+.cart__shipNote {
+  font-size: 1.2rem;
+}
+.cart__summary {
+  border-top: 1px solid var(--lightGray);
+  padding-top: 5px;
+}
+.cart__subtotal {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  font-size: 1.6rem;
+}
+.cart__subtotal strong {
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+.checkout__btn {
+  margin: 30px 0 20px;
+}
+.recommend {
+  font-size: 2rem;
+}
+.productCard__rowC {
+  margin-top: 8px;
+}
+.productCard__rowC .btnCart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 140px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--lightGray, #e5e5e5);
+  background: #fff;
+  color: var(--textColor, #222);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.productCard__rowC .btnCart.is-disabled,
+.productCard__rowC .btnCart[disabled] {
+  opacity: .5;
+  cursor: default;
+}
+.productCard__actions {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+.cartEmpty__cta {
+  text-decoration: none;
+  color: var(--textColor);
+}
+.cartEmpty p {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.cartToast {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(17,17,17,.95);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  font-size: 1.4rem;
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.cartToast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.stepper__grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+.stepper__grid img {
+  max-width: 390px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
