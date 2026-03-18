@@ -415,7 +415,9 @@ html.is-nav-open .header__hamburgerBtn[data-nav-open] .b3 {
   color: #fff;
   font-weight: 200;
   letter-spacing: 0.2em;
-  text-shadow: 0 0 3.5px rgba(0, 0, 0, 1);
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.95),
+    0 1px 2px rgba(0, 0, 0, 0.9);
   padding-left: 30px;
 }
 
@@ -2322,6 +2324,34 @@ html.is-filter-open header {
 .sortSheet__item[aria-pressed="true"]::after {
   opacity: 1;
 }
+
+.fade-kv {
+  opacity: 0;
+  transform: scale(1.02);
+  animation: kvFadeIn 1s ease forwards;
+}
+
+.fade-copy {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: copyFadeIn 0.9s ease forwards;
+  animation-delay: 0.55s;
+}
+
+@keyframes kvFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes copyFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* =========================
    Desktop
 ========================= */
