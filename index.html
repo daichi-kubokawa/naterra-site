@@ -1,365 +1,644 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Naterraオンラインショップ トップページ" />
-  <title>Naterra</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300&family=Roboto:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon/favicon-48x48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/favicon-180x180.png" />
-</head>
-<body>
-  <header>
-    <div class="header__nav">
-      <div class="header__left">
-        <div class="header__hamburger sp">
-          <button class="btn-trigger" id="btn03" data-nav-open aria-label="メニューを開閉" aria-expanded="false">
-            <span></span><span></span><span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Naterraオンラインショップ トップページ" />
+    <title>Naterra</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300&family=Roboto:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="./assets/images/favicon/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/favicon/favicon-180x180.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header__nav">
+        <div class="header__left">
+          <div class="header__hamburger sp">
+            <button
+              class="btn-trigger"
+              id="btn03"
+              data-nav-open
+              aria-label="メニューを開閉"
+              aria-expanded="false"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+          <div class="header__logo">
+            <a href="./index.html" class="header__logoLink">
+              <img src="./assets/images/logo/logo-sp.svg" alt="Naterra" />
+            </a>
+          </div>
+          <div class="header__textink pc">
+            <a href="./products-all.html" class="">カテゴリ一覧</a>
+          </div>
+          <div class="header__textink pc">
+            <a href="./products-new.html" class="">新着商品</a>
+          </div>
+          <div class="header__textink pc">
+            <a href="./products-popular.html" class="">人気商品</a>
+          </div>
+        </div>
+        <div class="header__tools">
+          <div class="header__serch pc">
+            <a href="#" class="header__serchLink">
+              <img src="./assets/images/icon/search.svg" alt="検索" />
+            </a>
+          </div>
+          <div class="header__login">
+            <a href="#" class="header__LoginLink">
+              <img src="./assets/images/icon/login.svg" alt="ログイン" />
+            </a>
+          </div>
+          <div class="header__cart">
+            <a href="./cart.html" class="header__CartLink">
+              <img src="./assets/images/icon/cart.svg" alt="カート" />
+              <span id="cartBadge" class="cartBadge" hidden></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="navOverlay" data-nav-overlay hidden></div>
+    <aside
+      class="navDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      data-nav-drawer
+      hidden
+    >
+      <div class="navDrawer__panel">
+        <nav class="navDrawer__body" aria-label="メニュー">
+          <div class="menuSection">
+            <h3 class="menuSection__title">商品</h3>
+            <ul class="menuList" role="list">
+              <li>
+                <a class="menuItem" href="./products-all.html"
+                  ><span>商品一覧</span></a
+                >
+              </li>
+              <li>
+                <a class="menuItem" href="./products-new.html"
+                  ><span>新着商品</span></a
+                >
+              </li>
+              <li>
+                <a class="menuItem" href="./products-popular.html"
+                  ><span>人気商品</span></a
+                >
+              </li>
+              <li>
+                <button
+                  class="menuItem menuItem--toggle"
+                  aria-expanded="false"
+                  data-cat-toggle
+                >
+                  <span>カテゴリ一覧</span>
+                  <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                    <line
+                      x1="4"
+                      y1="10"
+                      x2="16"
+                      y2="10"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      class="v"
+                      x1="10"
+                      y1="4"
+                      x2="10"
+                      y2="16"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+                <ul class="submenu" hidden>
+                  <li>
+                    <a
+                      class="submenuItem submenuItem--thumb"
+                      href="./products-fabric.html"
+                      ><img
+                        src="./assets/images/categories/fabric/fabric-330.jpg"
+                        alt=""
+                      />布雑貨</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="submenuItem submenuItem--thumb"
+                      href="./products-kitchen.html"
+                      ><img
+                        src="./assets/images/categories/kitchen/kitchen-330.jpg"
+                        alt=""
+                      />キッチン</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="submenuItem submenuItem--thumb"
+                      href="./products-interior.html"
+                      ><img
+                        src="./assets/images/categories/interior/interior-330.jpg"
+                        alt=""
+                      />インテリア</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="submenuItem submenuItem--thumb"
+                      href="./products-relax.html"
+                      ><img
+                        src="./assets/images/categories/relax/relax-330.jpg"
+                        alt=""
+                      />バス・リラックス</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="submenuItem submenuItem--thumb"
+                      href="./products-storage.html"
+                      ><img
+                        src="./assets/images/categories/storage/storage-330.jpg"
+                        alt=""
+                      />収納・かご</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menuSection">
+            <h3 class="menuSection__title">お店</h3>
+            <ul class="menuList" role="list">
+              <li>
+                <a class="menuItem" href="#"><span>Naterraについて</span></a>
+              </li>
+              <li>
+                <a class="menuItem" href="#"><span>ニュース</span></a>
+              </li>
+              <li>
+                <a class="menuItem" href="#"><span>お問い合わせ</span></a>
+              </li>
+              <li>
+                <a class="menuItem" href="#"><span>よくあるご質問</span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menuSNS">
+            <a href="#"
+              ><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"
+            /></a>
+            <a href="#"
+              ><img
+                src="./assets/images/sns/Instagram_Glyph_Black.png"
+                alt="Instagram"
+            /></a>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="cartOverlay" id="cartOverlay" hidden></div>
+    <aside
+      class="cartSheet"
+      id="cartSheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cartSheetTitle"
+      hidden
+    >
+      <div class="cartSheet__bar">
+        <button
+          type="button"
+          class="cartSheet__close"
+          id="cartCloseBtn"
+          aria-label="閉じる"
+        >
+          <span></span><span></span>
+        </button>
+        <h3 id="cartSheetTitle">カートに入れる</h3>
+      </div>
+      <div class="cartSheet__body">
+        <h4 id="cartProductName" class="cartSheet__name"></h4>
+        <div class="cartSheet__imgWrap"><img id="cartProductImg" alt="" /></div>
+        <div class="cartQty">
+          <button
+            type="button"
+            class="cartQty__btn"
+            id="qtyMinus"
+            aria-label="数量を1減らす"
+          >
+            <img
+              class="reductionIcon"
+              src="./assets/images/icon/reduction.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+          <output id="qtyValue" class="cartQty__value" aria-live="polite"
+            >1</output
+          >
+          <button
+            type="button"
+            class="cartQty__btn"
+            id="qtyPlus"
+            aria-label="数量を1増やす"
+          >
+            <img
+              class="reductionIcon"
+              src="./assets/images/icon/add.svg"
+              alt=""
+              aria-hidden="true"
+            />
           </button>
         </div>
-        <div class="header__logo">
-          <a href="./index.html" class="header__logoLink">
+        <div class="cartPrimaryBtn__Container" style="margin-top: 16px">
+          <button type="button" id="addToCartBtn" class="cartPrimaryBtn">
+            カートに入れる
+          </button>
+        </div>
+      </div>
+    </aside>
+    <aside
+      class="cartConfirm"
+      id="cartConfirm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cartConfirmTitle"
+      hidden
+    >
+      <div class="cartSheet__bar">
+        <button
+          type="button"
+          class="cartSheet__close"
+          id="confirmCloseBtn"
+          aria-label="閉じる"
+        >
+          <span></span><span></span>
+        </button>
+        <h3 id="cartConfirmTitle">カートに追加しました</h3>
+      </div>
+      <div class="cartConfirm__body">
+        <p class="cartConfirm__row">
+          カートの合計 <strong id="cartTotalCount">0</strong> 点
+        </p>
+        <p class="cartConfirm__row">
+          税込 <strong id="cartTotalPrice">¥0</strong>
+        </p>
+      </div>
+      <div class="cartPrimaryBtn__Container">
+        <a href="./cart.html" class="cartPrimaryBtn cartPrimaryBtn--full"
+          >カートを確認する</a
+        >
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <div class="keyVisual">
+          <h1 class="catchcopy">自然と、くらす。</h1>
+        </div>
+        <div class="news__item">
+          <div class="news__icon">
+            <img src="./assets/images/icon/news.svg" alt="お知らせ" />
+          </div>
+          <div class="news__content">
+            <p class="news__title">
+              6月の吉祥寺マルシェにNaterraが出店します！
+            </p>
+            <time class="news__date" datetime="2025-06-14"
+              >開催日：2025/6/14（土）</time
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="products" aria-labelledby="home-new-title">
+        <div class="products__ttl">
+          <h2 id="home-new-title" class="section__title">新着商品</h2>
+          <a href="./products-new.html" class="moreLink">
+            <p class="moreLink__text">新着商品をもっと見る</p>
+            <span></span>
+          </a>
+        </div>
+        <ul id="homeNewGrid" class="productGrid" role="list"></ul>
+      </section>
+
+      <section class="products" aria-labelledby="home-popular-title">
+        <div class="products__ttl">
+          <h2 id="home-popular-title" class="section__title">人気商品</h2>
+          <a href="./products-popular.html" class="moreLink">
+            <p class="moreLink__text">人気商品をもっと見る</p>
+            <span></span>
+          </a>
+        </div>
+        <ul id="homePopularGrid" class="productGrid" role="list"></ul>
+      </section>
+
+      <template id="homeProductCardTpl">
+        <li class="productCard">
+          <a
+            href="./index.html"
+            class="productCard__thumbWrap productCard__link"
+          >
+            <img class="productCard__thumb" alt="" />
+            <span class="badge badge--limited" hidden>数量<br />限定</span>
+          </a>
+          <div class="productCard__rowA">
+            <p class="productCard__name"></p>
+            <button
+              class="favBtn"
+              type="button"
+              aria-label="お気に入りに追加"
+              aria-pressed="false"
+              data-src-off="./assets/images/icon/favorite-off.svg"
+              data-src-on="./assets/images/icon/favorite-on.svg"
+            >
+              <img
+                class="favIcon"
+                src="./assets/images/icon/favorite-off.svg"
+                alt=""
+                aria-hidden="true"
+                width="32"
+                height="32"
+              />
+            </button>
+          </div>
+          <div class="productCard__rowB">
+            <p class="productCard__stock"></p>
+            <p class="productCard__price"></p>
+          </div>
+        </li>
+      </template>
+
+      <section class="categories">
+        <div class="products__ttl">
+          <h2 class="section__title">カテゴリ一覧</h2>
+          <a href="./products-all.html" class="moreLink">
+            <p class="moreLink__text">すべての商品を見る</p>
+            <span></span>
+          </a>
+        </div>
+
+        <div class="categories__list">
+          <div class="categories__item">
+            <a class="categories__fabric" href="./products-fabric.html"
+              ><span class="categories__name sp">布雑貨</span></a
+            >
+          </div>
+          <div class="categories__item">
+            <a class="categories__kitchen" href="./products-kitchen.html"
+              ><span class="categories__name sp">キッチン</span></a
+            >
+          </div>
+          <div class="categories__item">
+            <a class="categories__interior" href="./products-interior.html"
+              ><span class="categories__name sp">インテリア</span></a
+            >
+          </div>
+          <div class="categories__item">
+            <a class="categories__relax" href="./products-relax.html"
+              ><span class="categories__name sp">バス・リラックス</span></a
+            >
+          </div>
+          <div class="categories__item">
+            <a class="categories__storage" href="./products-storage.html"
+              ><span class="categories__name sp">収納・かご</span></a
+            >
+          </div>
+          <p class="categories__namepc pc">布雑貨</p>
+          <p class="categories__namepc pc">キッチン</p>
+          <p class="categories__namepc pc">インテリア</p>
+          <p class="categories__namepc pc">バス・リラックス</p>
+          <p class="categories__namepc pc">収納・カゴ</p>
+        </div>
+      </section>
+
+      <section class="about" aria-labelledby="about-title">
+        <div class="about__card">
+          <div class="decor-circle c1"></div>
+          <div class="decor-circle c2"></div>
+          <div class="decor-circle c3"></div>
+          <div class="decor-circle c4"></div>
+          <div class="decor-circle c5 pc"></div>
+          <div class="decor-circle c6 pc"></div>
+
+          <h2 id="about-title" class="about__title">
+            <span>Naterra</span>について
+          </h2>
+          <p class="about__subtitle">
+            自然とともに、心地よい暮らしを。<br
+              class="sp"
+            />ぬくもりのある毎日をあなたへ。
+          </p>
+          <p class="about__text">
+            東京・狛江に実店舗を構えるNaterraでは、自然素材の雑貨をオンラインと店頭で販売しています。<br />木のぬくもりや、作る楽しさを届けるため、ワークショップも定期的に開催しています。
+          </p>
+          <div class="about__gallery">
+            <figure class="about__photo about__photoA sp">
+              <img
+                src="./assets/images/about/about-1.webp"
+                srcset="
+                  ./assets/images/about/about-1.webp   1x,
+                  ./assets/images/about/about-1x2.webp 2x
+                "
+                alt="店内の様子"
+              />
+            </figure>
+            <figure class="about__photo about__photoA pc">
+              <img
+                src="./assets/images/about/about-1-618x700.webp"
+                srcset="
+                  ./assets/images/about/about-1-618x700.webp   1x,
+                  ./assets/images/about/about-1-1236x1400.webp 2x
+                "
+                alt="店内の様子"
+              />
+            </figure>
+            <figure class="about__photo about__photoB sp">
+              <img
+                src="./assets/images/about/about-2.webp"
+                srcset="
+                  ./assets/images/about/about-2.webp   1x,
+                  ./assets/images/about/about-2x2.webp 2x
+                "
+                alt="店内の様子"
+              />
+            </figure>
+            <figure class="about__photo about__photoB pc">
+              <img
+                src="./assets/images/about/about-3-451x550.webp"
+                srcset="
+                  ./assets/images/about/about-3-451x550.webp  1x,
+                  ./assets/images/about/about-3-904x1100.webp 2x
+                "
+                alt="店内の様子"
+              />
+            </figure>
+            <figure class="about__photo about__photoC sp">
+              <img
+                src="./assets/images/about/about-3.webp"
+                srcset="
+                  ./assets/images/about/about-3.webp   1x,
+                  ./assets/images/about/about-3x2.webp 2x
+                "
+                alt="店内の様子"
+              />
+            </figure>
+          </div>
+          <figure class="about__photo about__photoC pc">
+            <img
+              src="./assets/images/about/about-2-1240x500.webp"
+              srcset="
+                ./assets/images/about/about-2-1240x500.webp  1x,
+                ./assets/images/about/about-2-2480x1000.webp 2x
+              "
+              alt="店内の様子"
+            />
+          </figure>
+          <p class="about__caption">Naterraの毎日をのぞいてみてください。</p>
+          <div class="btnContainer"><a href="#" class="btn">もっと見る</a></div>
+        </div>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="faq__prevcl">
+          <div class="faq__card">
+            <h2 id="faq-title" class="faq__title">よくあるご質問</h2>
+            <details class="faq__item">
+              <summary class="faq__q">送料はいくらかかりますか？</summary>
+              <div class="faq__a">
+                <span
+                  >全国一律600円（税込）でお届けしています。<br />5,000円（税込）以上で送料無料です。</span
+                >
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__q">注文から何日で届きますか？</summary>
+              <div class="faq__a">
+                <span>通常はご注文から3〜5営業日以内に発送します。</span>
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__q">ギフト包装はできますか？</summary>
+              <div class="faq__a">
+                <span
+                  >はい、対応可能です。<br />注文手続き画面で「ギフト包装」を選択してください。（有料）</span
+                >
+              </div>
+            </details>
+            <div class="faq__btnContainer">
+              <a href="#" class="btn">ほかの質問も見る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer sp">
+      <div class="footer__prev">
+        <div class="footer__inner">
+          <div class="footer__logo">
+            <img src="./assets/images/logo/logo-sp.svg" alt="Naterra" />
+          </div>
+          <nav class="footer__nav">
+            <ul class="navleft">
+              <li><a href="#">Naterraについて</a></li>
+              <li><a href="#">店舗情報</a></li>
+              <li><a href="#">ニュース</a></li>
+              <li><a href="#">お問い合わせ</a></li>
+              <li><a href="#">よくあるご質問</a></li>
+            </ul>
+            <ul class="navright">
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">特定商取引法に基づく表記</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </nav>
+          <div class="footer__sns">
+            <a href="#"
+              ><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"
+            /></a>
+            <a href="#"
+              ><img
+                src="./assets/images/sns/Instagram_Glyph_Black.png"
+                alt="Instagram"
+            /></a>
+          </div>
+          <div class="copy__container">
+            <p class="footer__copy">&copy;2025 Naterra</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="siteFooter pc">
+      <div class="siteFooter__inner">
+        <div class="siteFooter__top">
+          <a class="footerLogo" href="/">
             <img src="./assets/images/logo/logo-sp.svg" alt="Naterra" />
           </a>
+          <nav class="footerNav" aria-label="フッターナビ">
+            <ul class="footerNav__list">
+              <li><a>Naterraについて</a></li>
+              <li><a>店舗情報</a></li>
+              <li><a>ニュース</a></li>
+              <li><a>お問い合わせ</a></li>
+              <li><a>よくあるご質問</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="header__textink pc">
-          <a href="./products-all.html" class="">カテゴリ一覧</a>
+        <ul class="footerLegal">
+          <li><a>利用規約</a></li>
+          <li><a>プライバシーポリシー</a></li>
+          <li><a>特定商取引法に基づく表記</a></li>
+        </ul>
+        <div class="footerSNS" aria-label="SNS">
+          <a class="snsLink" href="#"
+            ><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"
+          /></a>
+          <a class="snsLink" href="#"
+            ><img
+              src="./assets/images/sns/Instagram_Glyph_Black.png"
+              alt="Instagram"
+          /></a>
         </div>
-        <div class="header__textink pc">
-          <a href="./products-new.html" class="">新着商品</a>
-        </div>
-        <div class="header__textink pc">
-          <a href="./products-popular.html" class="">人気商品</a>
-        </div>
-      </div>
-      <div class="header__tools">
-        <div class="header__serch pc">
-          <a href="#" class="header__serchLink">
-            <img src="./assets/images/icon/search.svg" alt="検索" />
-          </a>
-        </div>
-        <div class="header__login">
-          <a href="#" class="header__LoginLink">
-            <img src="./assets/images/icon/login.svg" alt="ログイン" />
-          </a>
-        </div>
-        <div class="header__cart">
-          <a href="./cart.html" class="header__CartLink">
-            <img src="./assets/images/icon/cart.svg" alt="カート"/>
-            <span id="cartBadge" class="cartBadge" hidden></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="navOverlay" data-nav-overlay hidden></div>
-  <aside class="navDrawer" role="dialog" aria-modal="true" aria-hidden="true" data-nav-drawer hidden>
-    <div class="navDrawer__panel">
-      <nav class="navDrawer__body" aria-label="メニュー">
-        <div class="menuSection">
-          <h3 class="menuSection__title">商品</h3>
-          <ul class="menuList" role="list">
-            <li><a class="menuItem" href="./products-all.html"><span>商品一覧</span></a></li>
-            <li><a class="menuItem" href="./products-new.html"><span>新着商品</span></a></li>
-            <li><a class="menuItem" href="./products-popular.html"><span>人気商品</span></a></li>
-            <li>
-              <button class="menuItem menuItem--toggle" aria-expanded="false" data-cat-toggle>
-                <span>カテゴリ一覧</span>
-                <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
-                  <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <line class="v" x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                </svg>
-              </button>
-              <ul class="submenu" hidden>
-                <li><a class="submenuItem submenuItem--thumb" href="./products-fabric.html"><img src="./assets/images/categories/fabric/fabric-330.jpg" alt="" />布雑貨</a></li>
-                <li><a class="submenuItem submenuItem--thumb" href="./products-kitchen.html"><img src="./assets/images/categories/kitchen/kitchen-330.jpg" alt="" />キッチン</a></li>
-                <li><a class="submenuItem submenuItem--thumb" href="./products-interior.html"><img src="./assets/images/categories/interior/interior-330.jpg" alt="" />インテリア</a></li>
-                <li><a class="submenuItem submenuItem--thumb" href="./products-relax.html"><img src="./assets/images/categories/relax/relax-330.jpg" alt="" />バス・リラックス</a></li>
-                <li><a class="submenuItem submenuItem--thumb" href="./products-storage.html"><img src="./assets/images/categories/storage/storage-330.jpg" alt="" />収納・かご</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div class="menuSection">
-          <h3 class="menuSection__title">お店</h3>
-          <ul class="menuList" role="list">
-            <li><a class="menuItem" href="#"><span>Naterraについて</span></a></li>
-            <li><a class="menuItem" href="#"><span>ニュース</span></a></li>
-            <li><a class="menuItem" href="#"><span>お問い合わせ</span></a></li>
-            <li><a class="menuItem" href="#"><span>よくあるご質問</span></a></li>
-          </ul>
-        </div>
-
-        <div class="menuSNS">
-          <a href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE" /></a>
-          <a href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram" /></a>
-        </div>
-      </nav>
-    </div>
-  </aside>
-
-  <div class="cartOverlay" id="cartOverlay" hidden></div>
-  <aside class="cartSheet" id="cartSheet" role="dialog" aria-modal="true" aria-labelledby="cartSheetTitle" hidden>
-    <div class="cartSheet__bar">
-      <button type="button" class="cartSheet__close" id="cartCloseBtn" aria-label="閉じる">
-        <span></span><span></span>
-      </button>
-      <h3 id="cartSheetTitle">カートに入れる</h3>
-    </div>
-    <div class="cartSheet__body">
-      <h4 id="cartProductName" class="cartSheet__name"></h4>
-      <div class="cartSheet__imgWrap"><img id="cartProductImg" alt=""/></div>
-      <div class="cartQty">
-        <button type="button" class="cartQty__btn" id="qtyMinus" aria-label="数量を1減らす">
-          <img class="reductionIcon" src="./assets/images/icon/reduction.svg" alt="" aria-hidden="true">
-        </button>
-        <output id="qtyValue" class="cartQty__value" aria-live="polite">1</output>
-        <button type="button" class="cartQty__btn" id="qtyPlus" aria-label="数量を1増やす">
-          <img class="reductionIcon" src="./assets/images/icon/add.svg" alt="" aria-hidden="true">
-        </button>
-      </div>
-      <div class="cartPrimaryBtn__Container" style="margin-top:16px;">
-        <button type="button" id="addToCartBtn" class="cartPrimaryBtn">カートに入れる</button>
-      </div>
-    </div>
-  </aside>
-  <aside class="cartConfirm" id="cartConfirm" role="dialog" aria-modal="true" aria-labelledby="cartConfirmTitle" hidden>
-    <div class="cartSheet__bar">
-      <button type="button" class="cartSheet__close" id="confirmCloseBtn" aria-label="閉じる">
-        <span></span><span></span>
-      </button>
-      <h3 id="cartConfirmTitle">カートに追加しました</h3>
-    </div>
-    <div class="cartConfirm__body">
-      <p class="cartConfirm__row">カートの合計 <strong id="cartTotalCount">0</strong> 点</p>
-      <p class="cartConfirm__row">税込 <strong id="cartTotalPrice">¥0</strong></p>
-    </div>
-    <div class="cartPrimaryBtn__Container">
-      <a href="./cart.html" class="cartPrimaryBtn cartPrimaryBtn--full">カートを確認する</a>
-    </div>
-  </aside>
-
-  <main>
-    <section class="hero">
-      <div class="keyVisual">
-        <h1 class="catchcopy">自然と、くらす。</h1>
-      </div>
-      <div class="news__item">
-        <div class="news__icon"><img src="./assets/images/icon/news.svg" alt="お知らせ" /></div>
-        <div class="news__content">
-          <p class="news__title">6月の吉祥寺マルシェにNaterraが出店します！</p>
-          <time class="news__date" datetime="2025-06-14">開催日：2025/6/14（土）</time>
+        <div class="siteFooter__bottom">
+          <p class="footerCopy">©2025 Naterra</p>
         </div>
       </div>
-    </section>
-
-    <section class="products" aria-labelledby="home-new-title">
-      <div class="products__ttl">
-        <h2 id="home-new-title" class="section__title">新着商品</h2>
-        <a href="./products-new.html" class="moreLink">
-          <p class="moreLink__text">新着商品をもっと見る</p>
-          <span></span>
-        </a>
-      </div>
-      <ul id="homeNewGrid" class="productGrid" role="list"></ul>
-    </section>
-
-    <section class="products" aria-labelledby="home-popular-title">
-      <div class="products__ttl">
-        <h2 id="home-popular-title" class="section__title">人気商品</h2>
-        <a href="./products-popular.html" class="moreLink">
-          <p class="moreLink__text">人気商品をもっと見る</p>
-          <span></span>
-        </a>
-      </div>
-      <ul id="homePopularGrid" class="productGrid" role="list"></ul>
-    </section>
-
-    <template id="homeProductCardTpl">
-      <li class="productCard">
-        <a href="./index.html" class="productCard__thumbWrap productCard__link">
-          <img class="productCard__thumb" alt="">
-          <span class="badge badge--limited" hidden>数量<br>限定</span>
-        </a>
-        <div class="productCard__rowA">
-          <p class="productCard__name"></p>
-          <button class="favBtn" type="button" aria-label="お気に入りに追加" aria-pressed="false"
-            data-src-off="./assets/images/icon/favorite-off.svg"
-            data-src-on="./assets/images/icon/favorite-on.svg">
-            <img class="favIcon" src="./assets/images/icon/favorite-off.svg" alt="" aria-hidden="true" width="32" height="32">
-          </button>
-        </div>
-        <div class="productCard__rowB">
-          <p class="productCard__stock"></p>
-          <p class="productCard__price"></p>
-        </div>
-      </li>
-    </template>
-    
-    <section class="categories">
-      <div class="products__ttl">
-        <h2 class="section__title">カテゴリ一覧</h2>
-        <a href="./products-all.html" class="moreLink">
-          <p class="moreLink__text">すべての商品を見る</p>
-          <span></span>
-        </a>
-      </div>
-
-      <div class="categories__list">
-        <div class="categories__item"><a class="categories__fabric" href="./products-fabric.html"><span class="categories__name sp">布雑貨</span></a></div>
-        <div class="categories__item"><a class="categories__kitchen" href="./products-kitchen.html"><span class="categories__name sp">キッチン</span></a></div>
-        <div class="categories__item"><a class="categories__interior" href="./products-interior.html"><span class="categories__name sp">インテリア</span></a></div>
-        <div class="categories__item"><a class="categories__relax" href="./products-relax.html"><span class="categories__name sp">バス・リラックス</span></a></div>
-        <div class="categories__item"><a class="categories__storage" href="./products-storage.html"><span class="categories__name sp">収納・かご</span></a></div>
-        <p class="categories__namepc pc">布雑貨</p>
-        <p class="categories__namepc pc">キッチン</p>
-        <p class="categories__namepc pc">インテリア</p>
-        <p class="categories__namepc pc">バス・リラックス</p>
-        <p class="categories__namepc pc">収納・カゴ</p>
-      </div>
-    </section>
-
-    <section class="about" aria-labelledby="about-title">
-      <div class="about__card">
-        <div class="decor-circle c1"></div>
-        <div class="decor-circle c2"></div>
-        <div class="decor-circle c3"></div>
-        <div class="decor-circle c4"></div>
-        <div class="decor-circle c5 pc"></div>
-        <div class="decor-circle c6 pc"></div>
-
-        <h2 id="about-title" class="about__title"><span>Naterra</span>について</h2>
-        <p class="about__subtitle">自然とともに、心地よい暮らしを。<br class="sp"/>ぬくもりのある毎日をあなたへ。</p>
-        <p class="about__text">東京・狛江に実店舗を構えるNaterraでは、自然素材の雑貨をオンラインと店頭で販売しています。<br />木のぬくもりや、作る楽しさを届けるため、ワークショップも定期的に開催しています。</p>
-        <div class="about__gallery">
-          <figure class="about__photo about__photoA sp">
-            <img 
-              src="./assets/images/about/about-1.jpg"
-              srcset="./assets/images/about/about-1.jpg 1x, 
-              ./assets/images/about/about-1x2.jpg 2x"
-              alt="店内の様子" />
-          </figure>
-          <figure class="about__photo about__photoA pc">
-            <img 
-              src="./assets/images/about/about-1-618x700.jpg"
-              srcset="./assets/images/about/about-1-618x700.jpg 1x, 
-              ./assets/images/about/about-1-1236x1400.jpg 2x"
-              alt="店内の様子" />
-          </figure>
-          <figure class="about__photo about__photoB sp">
-            <img 
-              src="./assets/images/about/about-2.jpg"
-              srcset="./assets/images/about/about-2.jpg 1x, 
-              ./assets/images/about/about-2x2.jpg 2x"
-              alt="店内の様子" />
-          </figure>
-          <figure class="about__photo about__photoB pc">
-            <img 
-              src="./assets/images/about/about-3-451x550.jpg"
-              srcset="./assets/images/about/about-3-451x550.jpg 1x, 
-              ./assets/images/about/about-3-904x1100.jpg 2x"
-              alt="店内の様子" />
-          </figure>
-          <figure class="about__photo about__photoC sp">
-            <img 
-              src="./assets/images/about/about-3.jpg"
-              srcset="./assets/images/about/about-3.jpg 1x, 
-              ./assets/images/about/about-3x2.jpg 2x"
-              alt="店内の様子" />
-          </figure>
-        </div>
-        <figure class="about__photo about__photoC pc">
-          <img 
-            src="./assets/images/about/about-2-1240x500.jpg"
-            srcset="./assets/images/about/about-2-1240x500.jpg 1x, 
-            ./assets/images/about/about-2-2480x1000.jpg 2x"
-            alt="店内の様子" />
-        </figure>
-        <p class="about__caption">Naterraの毎日をのぞいてみてください。</p>
-        <div class="btnContainer"><a href="#" class="btn">もっと見る</a></div>
-      </div>
-    </section>
-
-    <section class="faq" aria-labelledby="faq-title">
-      <div class="faq__prevcl">
-        <div class="faq__card">
-          <h2 id="faq-title" class="faq__title">よくあるご質問</h2>
-          <details class="faq__item"><summary class="faq__q">送料はいくらかかりますか？</summary><div class="faq__a"><span>全国一律600円（税込）でお届けしています。<br />5,000円（税込）以上で送料無料です。</span></div></details>
-          <details class="faq__item"><summary class="faq__q">注文から何日で届きますか？</summary><div class="faq__a"><span>通常はご注文から3〜5営業日以内に発送します。</span></div></details>
-          <details class="faq__item"><summary class="faq__q">ギフト包装はできますか？</summary><div class="faq__a"><span>はい、対応可能です。<br />注文手続き画面で「ギフト包装」を選択してください。（有料）</span></div></details>
-          <div class="faq__btnContainer"><a href="#" class="btn">ほかの質問も見る</a></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer sp">
-    <div class="footer__prev">
-      <div class="footer__inner">
-        <div class="footer__logo"><img src="./assets/images/logo/logo-sp.svg" alt="Naterra" /></div>
-        <nav class="footer__nav">
-          <ul class="navleft">
-            <li><a href="#">Naterraについて</a></li>
-            <li><a href="#">店舗情報</a></li>
-            <li><a href="#">ニュース</a></li>
-            <li><a href="#">お問い合わせ</a></li>
-            <li><a href="#">よくあるご質問</a></li>
-          </ul>
-          <ul class="navright">
-            <li><a href="#">利用規約</a></li>
-            <li><a href="#">特定商取引法に基づく表記</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
-          </ul>
-        </nav>
-        <div class="footer__sns">
-          <a href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"/></a>
-          <a href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram"/></a>
-        </div>
-        <div class="copy__container"><p class="footer__copy">&copy;2025 Naterra</p></div>
-      </div>
-    </div>
-  </footer>
-  <footer class="siteFooter pc">
-    <div class="siteFooter__inner">
-      <div class="siteFooter__top">
-        <a class="footerLogo" href="/">
-          <img src="./assets/images/logo/logo-sp.svg" alt="Naterra">
-        </a>
-        <nav class="footerNav" aria-label="フッターナビ">
-          <ul class="footerNav__list">
-            <li><a href="./about.html">Naterraについて</a></li>
-            <li><a href="./shops.html">店舗情報</a></li>
-            <li><a href="./news.html">ニュース</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
-            <li><a href="./faq.html">よくあるご質問</a></li>
-          </ul>
-        </nav>
-      </div>
-      <ul class="footerLegal">
-        <li><a href="./terms.html">利用規約</a></li>
-        <li><a href="./privacy.html">プライバシーポリシー</a></li>
-        <li><a href="./tokusho.html">特定商取引法に基づく表記</a></li>
-      </ul>
-      <div class="footerSNS" aria-label="SNS">
-        <a class="snsLink" href="#"><img src="./assets/images/sns/LINE_Brand_icon.png" alt="LINE"></a>
-        <a class="snsLink" href="#"><img src="./assets/images/sns/Instagram_Glyph_Black.png" alt="Instagram"></a>
-      </div>
-      <div class="siteFooter__bottom">
-        <p class="footerCopy">©2025 Naterra</p>
-      </div>
-    </div>
-  </footer>
-  <script src="./assets/js/utils.js" defer></script>
-  <script src="./assets/js/main.js" defer></script>
-  <script src="./assets/js/home-sections.js" defer></script>
-  <script src="./assets/js/products-list.js" defer></script>
-  <script src="./assets/js/cart-modal.js" defer></script>
-</body>
+    </footer>
+    <script src="./assets/js/utils.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/home-sections.js" defer></script>
+    <script src="./assets/js/products-list.js" defer></script>
+    <script src="./assets/js/cart-modal.js" defer></script>
+  </body>
 </html>
-

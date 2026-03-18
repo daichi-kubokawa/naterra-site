@@ -39,7 +39,7 @@
 }
 .cartControls .cartQty__btn.is-disabled,
 .cartControls .cartQty__btn[disabled] {
-  opacity: .4;
+  opacity: 0.4;
   cursor: default;
   background: #f5f5f5;
   color: #9aa0a6;
@@ -127,7 +127,7 @@
 }
 .productCard__rowC .btnCart.is-disabled,
 .productCard__rowC .btnCart[disabled] {
-  opacity: .5;
+  opacity: 0.5;
   cursor: default;
 }
 .productCard__actions {
@@ -150,16 +150,18 @@
   top: 12px;
   left: 50%;
   transform: translateX(-50%) translateY(-20px);
-  background: rgba(17,17,17,.95);
+  background: rgba(17, 17, 17, 0.95);
   color: #fff;
   padding: 10px 16px;
   border-radius: 9999px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
   font-size: 1.4rem;
   z-index: 1100;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 .cartToast.is-show {
   opacity: 1;

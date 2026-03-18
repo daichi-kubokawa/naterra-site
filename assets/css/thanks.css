@@ -1,6 +1,6 @@
 body {
   background: #fff;
-  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-family: "Noto Sans JP", "Roboto", sans-serif;
   color: #444;
   margin: 0 auto;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 .thanks__main h1 {
-  color: #E57373;
+  color: #e57373;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -33,6 +33,6 @@ body {
   padding: 0 20px;
 }
 
-.thanksbtn{
+.thanksbtn {
   margin: 30px;
 }
